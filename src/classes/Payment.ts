@@ -1,0 +1,13 @@
+import HasFormatter from '../interfaces/HasFormatter';
+
+export default class Payment implements HasFormatter {
+  constructor(
+    readonly recipient: string,
+    readonly details: string,
+    readonly amount: number,
+  ) { }
+
+  format() {
+    return `${this.recipient} is owed ${this.amount} EUR for ${this.details}`;
+  }
+}
